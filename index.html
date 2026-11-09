@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>גדי גבריאל – מספרת גברים</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&amp;family=Rubik:wght@400;500&amp;family=Secular+One&amp;display=swap">
+<style>
+:root{--bg:#16191D;--ink:#F2F2F0;--muted:#A7ADB5;--green:#2A2F36;--on-green:#F2F2F0;--brass:#FF6B63;--line:#30353C;--red:#FF6B63;--blue:#8A929C;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*{box-sizing:border-box}
+:root{color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 Rubik,Arial,sans-serif}
+h1,h2{font-family:"Secular One",Rubik,Arial,sans-serif;font-weight:400;margin:0;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+.hero{display:grid;grid-template-columns:1fr 120px;gap:32px;align-items:stretch;min-height:88vh;padding:48px 0}
+.hero .txt{display:flex;flex-direction:column;justify-content:center;gap:24px}
+.hero h1{font-size:clamp(2.6rem,9vw,6.5rem)}
+.hero p{max-width:34ch;color:var(--muted);margin:0;font-size:1.2rem}
+.pole{border-radius:60px;border:6px solid var(--ink);min-height:360px;background:repeating-linear-gradient(-45deg,var(--red) 0 22px,var(--bg) 22px 44px,var(--blue) 44px 66px,var(--bg) 66px 88px);background-size:100% 124px;animation:spin 3s linear infinite}
+@keyframes spin{to{background-position:0 124px}}
+@media (prefers-reduced-motion:reduce){.pole{animation:none}html{scroll-behavior:auto}}
+.btn{display:inline-block;align-self:flex-start;background:var(--green);color:var(--on-green);padding:14px 28px;border-radius:4px;text-decoration:none;font:500 1rem Rubik,Arial,sans-serif;border:2px solid var(--brass);cursor:pointer}
+.btn:hover{background:var(--bg);color:var(--ink)}
+[aria-disabled="true"]{opacity:.45;pointer-events:none}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:32px}
+.menu{list-style:none;margin:0;padding:0;max-width:640px}
+.menu li{display:flex;align-items:baseline;gap:12px;padding:14px 0}
+.menu .dots{flex:1;border-bottom:2px dotted var(--line)}
+.menu small{display:block;color:var(--muted);font-size:.9rem}
+.menu .price{font-family:"Secular One",Rubik,sans-serif;font-size:1.5rem;color:var(--brass)}
+.muted{color:var(--muted)}
+.chips,.slots,.adm{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.chip,.slot{font:500 1rem Rubik,Arial,sans-serif;color:var(--ink);background:transparent;border:2px solid var(--line);border-radius:4px;padding:10px 16px;cursor:pointer}
+.chip.on,.slot.sel{background:var(--green);color:var(--on-green);border-color:var(--brass)}
+.slot{min-width:76px;text-align:center}
+.slot.free:hover{border-color:var(--brass)}
+.slot.taken{text-decoration:line-through;opacity:.4;cursor:not-allowed}
+.slot.off{border-style:dashed;opacity:.45}
+.slot.taken.sel{opacity:1}
+.form{display:grid;gap:14px;max-width:420px;margin-top:8px}
+.form label{display:grid;gap:4px;font-weight:500}
+.form label.ck{display:flex;gap:8px;align-items:center}
+.form input[type=text],.form select{font:400 1rem Rubik,Arial,sans-serif;padding:10px 12px;border:2px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.adm{padding:14px;border:2px dashed var(--brass);border-radius:4px}
+.band{background:var(--green);color:var(--on-green);text-align:center;padding:72px 24px}
+.band h2{margin-bottom:20px}
+.band .btn{background:var(--on-green);color:var(--green);border-color:var(--on-green)}.band .btn:hover{background:transparent;color:var(--on-green)}
+footer{padding:24px;text-align:center;color:var(--muted);font-size:.9rem}
+@media (max-width:600px){.hero{grid-template-columns:1fr 64px;min-height:80vh}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.logo svg{display:block;width:min(100%,520px);height:auto;direction:ltr}
+#book{text-align:center}
+#book .chips,#book .slots,#book .adm{justify-content:center}
+#book .form{margin-inline:auto;text-align:start}
+#book .form .btn{justify-self:center}
+.hero .txt{align-items:center;text-align:center}
+.hero .btn{align-self:center}
+.hero p{margin-inline:auto}
+.logo svg{margin-inline:auto}
+</style>
+</head>
+<body>
+<header class="wrap hero">
+  <div class="txt">
+    <h1 class="logo"><span class="sr">גדי גבריאל – מספרת גברים</span><svg viewBox="0 0 460 150" aria-hidden="true"><text x="230" y="84" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-style="italic" font-weight="700" font-size="68" style="fill:var(--ink)">Gadi Gabriel</text><path d="M150 106H310" style="fill:none;stroke:var(--brass)" stroke-width="2"></path><text x="230" y="136" text-anchor="middle" font-family="Rubik,Arial,sans-serif" font-weight="500" font-size="15" letter-spacing="6" style="fill:var(--brass)">BARBERSHOP</text></svg></h1>
+    <p>תספורת מדויקת, עיצוב זקן וגבות. בוחרים שעה ומגיעים.</p>
+    <a class="btn" href="#book">קביעת תור</a>
+  </div>
+  <div class="pole" role="img" aria-label="עמוד מספרה מסתובב"></div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>מחירון</h2>
+    <ul class="menu">
+      <li><span>תספורת כולל עיצוב זקן</span><span class="dots"></span><span class="price">50 ₪</span></li>
+      <li><span>תספורת ילדים</span><span class="dots"></span><span class="price">40 ₪</span></li>
+      <li><span>תוספת שעווה או עיצוב גבות<small>מתווסף לכל תספורת</small></span><span class="dots"></span><span class="price">+10 ₪</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <h2>קביעת תור</h2>
+    <div id="app"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>איך מגיעים</h2>
+    <p>לאה גולדברג 3, נתניה<br><a href="tel:0509898847">050-989-8847</a></p>
+  </div>
+</section>
+
+<div class="band">
+  <h2>התור שלך מחכה</h2>
+  <a class="btn" href="#book">קביעת תור</a>
+</div>
+<footer>© 2026 גדי גבריאל – מספרת גברים</footer>
+
+<script id="state" type="application/json">{"open":{"0":["10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00"],"1":["10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00"],"2":["10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00"],"3":["10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00"],"4":["10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00"],"5":["09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30"],"6":[]},"taken":{}}</script>
+<script>
+const WA="972509898847";
+const state=JSON.parse(document.getElementById("state").textContent);
+const DN=["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
+const pad=n=>String(n).padStart(2,"0");
+const slots=(a,b)=>{const r=[];for(let m=a*60;m<=b*60;m+=30)r.push(pad(Math.floor(m/60))+":"+pad(m%60));return r};
+const ALL=slots(8,21);
+if(!state.open)state.open={0:slots(10,21),1:slots(10,21),2:slots(10,21),3:slots(10,21),4:slots(10,21),5:slots(9,13.5),6:[]};
+const app=document.getElementById("app");
+const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()+i);return d});
+const key=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+let owner=false,art=null,edit=false,mode="hours",di=0,slot=null,nm="",dirty=false,osel=null;
+
+function avail(d){
+  let l=state.open[d.getDay()]||[];
+  if(d.toDateString()===new Date().toDateString()){
+    const n=new Date(),m=n.getHours()*60+n.getMinutes();
+    l=l.filter(t=>{const p=t.split(":");return p[0]*60+Number(p[1])>m});
+  }
+  return l;
+}
+function render(){
+  const d=days[di],k=key(d),taken=state.taken[k]||[],wd=d.getDay(),open=state.open[wd]||[];
+  let h="";
+  if(owner){
+    h+='<div class="adm"><button class="chip" data-a="edit">'+(edit?"יציאה ממצב ניהול":"מצב ניהול")+"</button>";
+    if(edit)h+='<button class="chip '+(mode=="hours"?"on":"")+'" data-a="hours">שעות פעילות ליום '+DN[wd]+'</button><button class="chip '+(mode=="taken"?"on":"")+'" data-a="taken">אישור וביטול תורים</button><button class="btn" data-a="save">שמירה ופרסום</button>'+(dirty?'<span class="muted">יש שינויים שלא נשמרו</span>':'');
+    h+="</div>";
+  }
+  h+='<div class="chips">'+days.map((x,i)=>'<button class="chip '+(i==di?"on":"")+'" data-d="'+i+'">'+DN[x.getDay()]+" "+x.getDate()+"/"+(x.getMonth()+1)+"</button>").join("")+"</div>";
+  const list=edit?(mode=="hours"?ALL:open):avail(d);
+  h+='<div class="slots">';
+  if(!list.length)h+='<p class="muted">אין שעות פנויות ביום הזה. אפשר לבחור יום אחר.</p>';
+  list.forEach(t=>{
+    let c="slot ",dis="";
+    if(edit&&mode=="hours")c+=open.includes(t)?"free":"off";
+    else if(taken.includes(t)){c+="taken"+(edit&&t===osel?" sel":"");dis=edit?"":" disabled"}
+    else c+="free"+((!edit&&t===slot)||(edit&&mode=="taken"&&t===osel)?" sel":"");
+    h+='<button class="'+c+'" data-t="'+t+'"'+dis+">"+t+"</button>";
+  });
+  h+="</div>";
+  if(edit&&mode=="taken"&&osel&&list.includes(osel)){
+    const tk=taken.includes(osel);
+    h+='<div class="adm"><span>שעה <b>'+osel+'</b> ביום '+DN[wd]+' '+d.getDate()+'/'+(d.getMonth()+1)+(tk?' תפוסה':' פנויה')+'</span>'+(tk?'<button class="btn" data-a="cancel">ביטול תור</button>':'<button class="btn" data-a="approve">אישור תור</button>')+'</div>';
+  }
+  if(!edit&&slot&&list.includes(slot)){
+    h+='<div class="form"><p>נבחרה שעה <b>'+slot+"</b> ביום "+DN[wd]+" "+d.getDate()+"/"+(d.getMonth()+1)+'</p><label>שם<input type="text" id="nm" value="'+nm.replace(/"/g,"")+'" autocomplete="name"></label><label>סוג תור<select id="sv"><option>תספורת כולל עיצוב זקן</option><option>תספורת ילדים</option></select></label><label class="ck"><input type="checkbox" id="br"> תוספת שעווה או עיצוב גבות (+10 ₪)</label><a class="btn" id="go" href="#" aria-disabled="true">שליחה בוואטסאפ</a></div>';
+  }
+  app.innerHTML=h;
+  link();
+}
+function link(){
+  const n=document.getElementById("nm"),go=document.getElementById("go");
+  if(!n||!go)return;
+  nm=n.value;
+  const d=days[di];
+  const t="שלום גדי, אני "+nm+" ורוצה לקבוע תור ביום "+DN[d.getDay()]+" "+d.getDate()+"/"+(d.getMonth()+1)+" בשעה "+slot+". "+document.getElementById("sv").value+(document.getElementById("br").checked?" + גבות":"");
+  go.href="https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+  go.setAttribute("aria-disabled",nm.trim()?"false":"true");
+}
+async function save(){
+  const today=key(new Date());
+  Object.keys(state.taken).forEach(k=>{if(k<today||!state.taken[k].length)delete state.taken[k]});
+  const c=document.documentElement.cloneNode(true);
+  c.removeAttribute("data-theme");c.removeAttribute("style");
+  c.querySelector("#app").innerHTML="";
+  c.querySelector("#state").textContent=JSON.stringify(state).replace(/</g,"\\u003c");
+  try{await art.publish("<!DOCTYPE html>"+c.outerHTML)}catch(e){alert("השמירה לא הצליחה, נסו שוב")}
+}
+app.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  const d=days[di],k=key(d),wd=d.getDay();
+  if(b.dataset.d!==undefined){di=+b.dataset.d;slot=null;osel=null}
+  else if(b.dataset.a=="edit")edit=!edit;
+  else if(b.dataset.a=="hours"||b.dataset.a=="taken"){mode=b.dataset.a;osel=null}
+  else if(b.dataset.a=="approve"){const a=state.taken[k]||[];if(!a.includes(osel))state.taken[k]=a.concat(osel);dirty=true}
+  else if(b.dataset.a=="cancel"){state.taken[k]=(state.taken[k]||[]).filter(x=>x!==osel);dirty=true}
+  else if(b.dataset.a=="save"){save();return}
+  else if(b.dataset.t){
+    const t=b.dataset.t;
+    if(edit&&mode=="hours"){
+      const o=state.open[wd]||[];
+      state.open[wd]=(o.includes(t)?o.filter(x=>x!==t):o.concat(t)).sort();dirty=true;
+    }else if(edit){osel=t}else slot=t;
+  }
+  render();
+});
+app.addEventListener("input",link);
+render();
+(async()=>{
+  try{
+    if(!window.claude)return;
+    const u=await claude.use("user");
+    art=await claude.use("artifact");
+    owner=!!(u&&u.isOwner()&&art);
+    if(owner)render();
+  }catch(e){}
+})();
+</script>
+
+
+</body></html>
