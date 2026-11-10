@@ -64,6 +64,9 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:.9rem}
 .logo svg{margin-inline:auto}
 .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
 .links .btn{align-self:auto}
+.sticky{display:none;position:fixed;inset-inline:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;text-align:center;background:var(--brass);color:#16191D;font:500 1.05rem Rubik,Arial,sans-serif;padding:14px;border-radius:8px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.45);transition:opacity .2s,transform .2s}
+.sticky.hide{opacity:0;pointer-events:none;transform:translateY(20px)}
+@media (max-width:700px){.sticky{display:block}footer{padding-bottom:96px}}
 </style>
 </head>
 <body>
@@ -104,6 +107,7 @@ footer{padding:24px;text-align:center;color:var(--muted);font-size:.9rem}
   <h2>התור שלך מחכה</h2>
   <a class="btn" href="#book">קביעת תור</a>
 </div>
+<a class="sticky" id="stk" href="#book">קביעת תור</a>
 <footer>© 2026 גדי גבריאל – מספרת גברים</footer>
 
 <script id="state" type="application/json">{"open":{"0":["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00"],"1":["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00"],"2":["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00"],"3":["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00"],"4":["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00"],"5":["09:00","10:00","11:00","12:00","13:00"],"6":[]},"taken":{}}</script>
@@ -220,6 +224,16 @@ function loadSlots(){
 loadSlots();
 setInterval(loadSlots,60000);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)loadSlots()});
+(function(){
+  const st=document.getElementById("stk");
+  if(!st||!("IntersectionObserver" in window))return;
+  const vis=new Set();
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)vis.add(e.target);else vis.delete(e.target)});
+    st.classList.toggle("hide",vis.size>0);
+  });
+  [".hero .btn","#book",".band .btn"].forEach(q=>{const x=document.querySelector(q);if(x)io.observe(x)});
+})();
 </script>
 
 
